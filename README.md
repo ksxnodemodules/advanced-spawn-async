@@ -68,7 +68,7 @@ When process returns non-zero code.
 
 ```javascript
 import spawn from 'advanced-spawn-async'
-const { process, onclose } = spawn('node')
+const { process, onclose } = spawn('node', [], { event: 'close' })
 process.stdin.end('process.exit(123)\n')
 onclose.catch(error => console.log(error.info))
 ```
