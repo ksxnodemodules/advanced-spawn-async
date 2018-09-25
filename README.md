@@ -59,7 +59,15 @@ import spawn from 'cross-spawn'
 
 const { process, onclose, onexit } = core(spawn, 'node')
 
-// Similar to above example
+// The rest is like the above example
+```
+
+### Provide Arguments and Options
+
+```javascript
+import spawn from 'advanced-spawn-async'
+const { onclose } = spawn('echo', ['hello'], { stdio: 'inherit', event: 'close' })
+onclose.then(status => console.log({status}))
 ```
 
 ### Non-Zero Status Code
