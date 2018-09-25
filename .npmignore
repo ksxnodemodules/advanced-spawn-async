@@ -23,3 +23,5 @@ package-lock.json
 shrinkwrap*
 renovate*
 tsconfig*
+*.ts
+!*.d.ts
