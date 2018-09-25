@@ -40,7 +40,7 @@
   "scripts": {
     "test": "npm run type-check && npm run lint && jest",
     "lint": "npm run tslint",
-    "tslint": "tslint",
+    "tslint": "tslint --project .",
     "type-check": "tsc --noEmit",
     "build": "tsc",
     "clean": "clean-typescript-build .",
