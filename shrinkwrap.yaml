@@ -4,6 +4,7 @@ dependencies:
 devDependencies:
   '@types/jest': 23.3.2
   clean-typescript-build: 0.0.6
+  cross-env: 5.2.0
   jest: 23.6.0
   static-type-assert: 3.0.1
   ts-jest: 23.10.1
@@ -672,6 +673,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /cross-env/5.2.0:
+    dependencies:
+      cross-spawn: 6.0.5
+      is-windows: 1.0.2
+    dev: true
+    engines:
+      node: '>=4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-jtdNFfFW1hB7sMhr/H6rW1Z45LFqyI431m3qU6bFXcQ3Eh7LtBuG3h74o7ohHZ3crrRkkqHlo4jYHFPcjroANg==
   /cross-spawn/5.1.0:
     dependencies:
       lru-cache: 4.1.3
@@ -3936,6 +3947,7 @@ specifiers:
   '@types/jest': ^23.3.2
   '@types/node': ^10.11.0
   clean-typescript-build: ^0.0.6
+  cross-env: ^5.2.0
   jest: ^23.6.0
   static-type-assert: ^3.0.1
   ts-jest: ^23.10.1
