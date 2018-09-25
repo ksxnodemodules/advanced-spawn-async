@@ -38,10 +38,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tsc --noEmit && tslint && jest",
+    "test": "npm run type-check && npm run lint && jest",
+    "lint": "npm run tslint",
     "tslint": "tslint",
     "type-check": "tsc --noEmit",
     "build": "tsc",
-    "prepublishOnly": "npm test && npm run build"
+    "clean": "clean-typescript-build .",
+    "prepublishOnly": "npm test && npm run build",
+    "postpublish": "npm run clean"
   }
 }
