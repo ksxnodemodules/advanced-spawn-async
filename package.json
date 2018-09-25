@@ -28,6 +28,8 @@
     "ts-jest": "^23.10.1",
     "static-type-assert": "^3.0.1",
     "clean-typescript-build": "^0.0.6",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
     "@types/jest": "^23.3.2"
   },
   "main": "index.js",

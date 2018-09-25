@@ -7,6 +7,8 @@ devDependencies:
   jest: 23.6.0
   static-type-assert: 3.0.1
   ts-jest: 23.10.1
+  tslint: 5.11.0
+  tslint-config-standard: 8.0.1
   typescript: 3.0.3
 packages:
   /@babel/code-frame/7.0.0:
@@ -638,6 +640,10 @@ packages:
     optional: true
     resolution:
       integrity: sha512-wPMUt6FnH2yzG95SA6mzjQOEKUU3aLaDEmzs1ti+1E9h+CsrZghRlqEM/EJ4KscsQVG8uNN4uVreUeT8+drlgg==
+  /commander/2.18.0:
+    dev: true
+    resolution:
+      integrity: sha512-6CYPa+JP2ftfRU2qkDK+UTVeQYosOg/2GbcjIcKPHfinyOLPVGXu/ovN86RP49Re5ndJK1N0kuiidFFuepc4ZQ==
   /component-emitter/1.2.1:
     dev: true
     resolution:
@@ -815,6 +821,15 @@ packages:
       node: '>=0.3.1'
     resolution:
       integrity: sha512-A46qtFgd+g7pDZinpnwiRJtxbC1hpgf0uzP3iG89scHk0AUC7A1TGxf5OiiOUv/JMZR8GOt8hL900hV0bOy5xA==
+  /doctrine/0.7.2:
+    dependencies:
+      esutils: 1.1.6
+      isarray: 0.0.1
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-fLhgNZujvpDgQLJrcpzkv6ZUxSM=
   /domexception/1.0.1:
     dependencies:
       webidl-conversions: 4.0.2
@@ -897,6 +912,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-De4/7TH81GlhjOc0IJn8GvoL2xM=
+  /esutils/1.1.6:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-wBzKqa5LiXxtDD4hCuUvPHqEQ3U=
   /esutils/2.0.2:
     dev: true
     engines:
@@ -1685,6 +1706,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
+  /isarray/0.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
   /isarray/1.0.0:
     dev: true
     resolution:
@@ -3092,6 +3117,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
+  /resolve/1.8.1:
+    dependencies:
+      path-parse: 1.0.6
+    dev: true
+    resolution:
+      integrity: sha512-AicPrAC7Qu1JxPCZ9ZgCZlY35QgFnNqc+0LtbRNxnVw4TXvjQ72wnuL9JQcEBgXkI9JM8MsT9kaQoHcpCRJOYA==
   /ret/0.1.15:
     dev: true
     engines:
@@ -3550,9 +3581,70 @@ packages:
       jest: '>=22 <24'
     resolution:
       integrity: sha512-3S5dI1BeW6FJQwhppEtb8ZL9y66izZ2tp6AX3nUHAjBjU2qogX4ahm5YWLKcwoVK5rYiUE7rcGNfYDa0Y+2jPQ==
+  /tslib/1.9.0:
+    dev: true
+    resolution:
+      integrity: sha512-f/qGG2tUkrISBlQZEjEqoZ3B2+npJjIf04H1wuAv9iA8i04Icp+61KRXxFdha22670NJopsZCIjhC3SnjPRKrQ==
   /tslib/1.9.3:
     resolution:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+  /tslint-config-standard/8.0.1:
+    dependencies:
+      tslint-eslint-rules: 5.4.0
+    dev: true
+    resolution:
+      integrity: sha512-OWG+NblgjQlVuUS/Dmq3ax2v5QDZwRx4L0kEuDi7qFY9UI6RJhhNfoCV1qI4el8Fw1c5a5BTrjQJP0/jhGXY/Q==
+  /tslint-eslint-rules/5.4.0:
+    dependencies:
+      doctrine: 0.7.2
+      tslib: 1.9.0
+      tsutils: 3.0.0
+    dev: true
+    peerDependencies:
+      tslint: ^5.0.0
+      typescript: ^2.2.0 || ^3.0.0
+    resolution:
+      integrity: sha512-WlSXE+J2vY/VPgIcqQuijMQiel+UtmXS+4nvK4ZzlDiqBfXse8FAvkNnTcYhnQyOTW5KFM+uRRGXxYhFpuBc6w==
+  /tslint/5.11.0:
+    dependencies:
+      babel-code-frame: 6.26.0
+      builtin-modules: 1.1.1
+      chalk: 2.4.1
+      commander: 2.18.0
+      diff: 3.5.0
+      glob: 7.1.3
+      js-yaml: 3.12.0
+      minimatch: 3.0.4
+      resolve: 1.8.1
+      semver: 5.5.1
+      tslib: 1.9.3
+      tsutils: 2.29.0
+    dev: true
+    engines:
+      node: '>=4.8.0'
+    hasBin: true
+    peerDependencies:
+      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev'
+    resolution:
+      integrity: sha1-mPMMAurjzecAYgHkwzywi0hYHu0=
+  /tsutils/2.29.0:
+    dependencies:
+      tslib: 1.9.3
+    dev: true
+    peerDependencies:
+      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
+    resolution:
+      integrity: sha512-g5JVHCIJwzfISaXpXE1qvNalca5Jwob6FjI4AoPlqMusJ6ftFE7IkkFoMhVLRgK+4Kx3gkzb8UZK5t5yTTvEmA==
+  /tsutils/3.0.0:
+    dependencies:
+      tslib: 1.9.3
+    dev: true
+    engines:
+      node: '>= 6'
+    peerDependencies:
+      typescript: '>=2.8.0 || >= 3.1.0-dev'
+    resolution:
+      integrity: sha512-LjHBWR0vWAUHWdIAoTjoqi56Kz+FDKBgVEuL+gVPG/Pv7QW5IdaDDeK9Txlr6U0Cmckp5EgCIq1T25qe3J6hyw==
   /tunnel-agent/0.6.0:
     dependencies:
       safe-buffer: 5.1.2
@@ -3848,4 +3940,6 @@ specifiers:
   static-type-assert: ^3.0.1
   ts-jest: ^23.10.1
   tslib: ^1.9.3
+  tslint: ^5.11.0
+  tslint-config-standard: ^8.0.1
   typescript: ^3.0.3
