@@ -1,12 +1,10 @@
-class SpawnError extends Error {
+abstract class SpawnError extends Error {
   constructor (message: string) {
     super(message)
     this.name = this.getName()
   }
 
-  protected getName () {
-    return 'SpawnError'
-  }
+  protected abstract getName (): string
 }
 
 export = SpawnError
