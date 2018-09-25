@@ -158,6 +158,22 @@ describe('when process successfully terminated', () => {
     })
   })
 
+  describe('with same event', () => {
+    const { onclose, onexit } = spawn('echo', ['hello', 'world'], { event: 'close' })
+
+    it('onclose is onexit', () => {
+      expect(onclose as any).toBe(onexit as any)
+    })
+
+    it('onclose promise', async () => {
+      expect(sanitize(await onclose, { args: true })).toMatchSnapshot()
+    })
+
+    it('onexit promise', async () => {
+      expect(sanitize(await onexit, { args: true })).toMatchSnapshot()
+    })
+  })
+
   describe('with stdout and stderr', () => {
     const factory = spawn('node', [data.bothStdoutStderr], { env: { HELLO: 'WORLD' } })
 

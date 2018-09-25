@@ -144,6 +144,56 @@ Object {
 }
 `;
 
+exports[`when process successfully terminated with same event onclose promise 1`] = `
+Object {
+  "args": Array [
+    "hello",
+    "world",
+  ],
+  "command": "echo",
+  "options": Object {
+    "event": "close",
+  },
+  "output": "hello world
+",
+  "process": Object {
+    "constructor": Object {
+      "name": "ChildProcess",
+    },
+  },
+  "signal": null,
+  "status": 0,
+  "stderr": "",
+  "stdout": "hello world
+",
+}
+`;
+
+exports[`when process successfully terminated with same event onexit promise 1`] = `
+Object {
+  "args": Array [
+    "hello",
+    "world",
+  ],
+  "command": "echo",
+  "options": Object {
+    "event": "close",
+  },
+  "output": "hello world
+",
+  "process": Object {
+    "constructor": Object {
+      "name": "ChildProcess",
+    },
+  },
+  "signal": null,
+  "status": 0,
+  "stderr": "",
+  "stdout": "hello world
+",
+}
+`;
+
 exports[`when process successfully terminated with specified stdin close promise 1`] = `
 Object {
   "args": Array [],
