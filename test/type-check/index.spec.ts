@@ -1,6 +1,6 @@
-import {spawn, ChildProcess} from 'child_process'
+import { spawn, ChildProcess } from 'child_process'
 import assert from 'static-type-assert'
-import spawnAsync, {core, main, SpawnFactory} from '../../index'
+import spawnAsync, { core, main, SpawnFactory } from '../../index'
 
 assert<typeof spawnAsync>(main)
 

@@ -1,4 +1,4 @@
-import {IsomorphicSpawn, InternalErrorInformation} from '../../../types'
+import { IsomorphicSpawn, InternalErrorInformation } from '../../../types'
 import SpawnError from '../spawn-error'
 
 class InternalError<Process extends IsomorphicSpawn.Return, Error> extends SpawnError {

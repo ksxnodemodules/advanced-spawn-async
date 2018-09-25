@@ -1,4 +1,4 @@
-import {spawn, SpawnOptions} from 'child_process'
+import { spawn, SpawnOptions } from 'child_process'
 import callSpawn from '../core'
 
 export = (command: string, args?: string[], options?: SpawnOptions) =>

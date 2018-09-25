@@ -85,7 +85,7 @@ describe('when executable does not exist', () => {
 })
 
 describe('when process terminated with non-zero status code', () => {
-  const factory = spawn('node', [data.withNonZeroStatus], {env: {HELLO: 'WORLD'}})
+  const factory = spawn('node', [data.withNonZeroStatus], { env: { HELLO: 'WORLD' } })
 
   it('onclose promise', async () => {
     const result = await factory.onclose.then(
@@ -122,44 +122,44 @@ describe('when process successfully terminated', () => {
     })
 
     describe('close promise', () => {
-      const {onclose} = factory
+      const { onclose } = factory
 
       it('onclose->process is factory.process', async () => {
         expect((await onclose).process).toBe(factory.process)
       })
 
       it('matches snapshot', async () => {
-        expect(sanitize(await onclose, {args: true})).toMatchSnapshot()
+        expect(sanitize(await onclose, { args: true })).toMatchSnapshot()
       })
     })
 
     describe('exit promise', () => {
-      const {onexit} = factory
+      const { onexit } = factory
 
       it('exit->process is factory.process', async () => {
         expect((await onexit).process).toBe(factory.process)
       })
 
       it('matches snapshot', async () => {
-        expect(sanitize(await onexit, {args: true})).toMatchSnapshot()
+        expect(sanitize(await onexit, { args: true })).toMatchSnapshot()
       })
     })
   })
 
   describe('with full arguments', () => {
-    const factory = spawn('echo', ['hello', 'world'], {env: {HELLO: 'WORLD'}})
+    const factory = spawn('echo', ['hello', 'world'], { env: { HELLO: 'WORLD' } })
 
     it('onclose promise', async () => {
-      expect(sanitize(await factory.onclose, {args: true})).toMatchSnapshot()
+      expect(sanitize(await factory.onclose, { args: true })).toMatchSnapshot()
     })
 
     it('onexit promise', async () => {
-      expect(sanitize(await factory.onexit, {args: true})).toMatchSnapshot()
+      expect(sanitize(await factory.onexit, { args: true })).toMatchSnapshot()
     })
   })
 
   describe('with stdout and stderr', () => {
-    const factory = spawn('node', [data.bothStdoutStderr], {env: {HELLO: 'WORLD'}})
+    const factory = spawn('node', [data.bothStdoutStderr], { env: { HELLO: 'WORLD' } })
 
     it('onclose promise', async () => {
       expect(sanitize(await factory.onclose)).toMatchSnapshot()
@@ -171,14 +171,14 @@ describe('when process successfully terminated', () => {
   })
 
   describe('with specified stdin', () => {
-    const {process, onclose, onexit} = spawn('bash')
+    const { process, onclose, onexit } = spawn('bash')
 
     it('close promise', async () => {
-      expect(sanitize(await onclose, {args: true})).toMatchSnapshot
+      expect(sanitize(await onclose, { args: true })).toMatchSnapshot()
     })
 
     it('exit promise', async () => {
-      expect(sanitize(await onexit, {args: true})).toMatchSnapshot
+      expect(sanitize(await onexit, { args: true })).toMatchSnapshot()
     })
 
     process.stdin.write('echo stdin foo\n')

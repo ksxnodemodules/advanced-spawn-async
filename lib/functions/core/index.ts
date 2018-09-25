@@ -1,6 +1,6 @@
-import {SpawnOptions} from 'child_process'
-import {IsomorphicSpawn, SpawnFactory} from '../../types'
-import {TerminationError, InternalError} from '../../classes'
+import { SpawnOptions } from 'child_process'
+import { IsomorphicSpawn, SpawnFactory } from '../../types'
+import { TerminationError, InternalError } from '../../classes'
 
 function callSpawn<
   Process extends IsomorphicSpawn.Return

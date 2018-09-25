@@ -1,4 +1,4 @@
-import {SpawnOptions} from 'child_process'
+import { SpawnOptions } from 'child_process'
 
 export interface IsomorphicSpawn<Return extends IsomorphicSpawn.Return> {
   (command: string, args: string[], options: SpawnOptions): Return

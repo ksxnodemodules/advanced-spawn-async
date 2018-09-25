@@ -1,4 +1,4 @@
-import {IsomorphicSpawn, SpawnFactory} from '../../../types'
+import { IsomorphicSpawn, SpawnFactory } from '../../../types'
 import SpawnError from '../spawn-error'
 
 class TerminationError<
@@ -30,7 +30,7 @@ class TerminationError<
     } = info
 
     const cli = JSON.stringify([command, ...args])
-    const code = JSON.stringify({status, signal})
+    const code = JSON.stringify({ status, signal })
 
     return `Failed to execute ${cli} (${code}) ${stderr}`
   }
