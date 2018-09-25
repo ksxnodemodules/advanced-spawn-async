@@ -38,6 +38,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "tsc --noEmit && tslint && jest",
+    "tslint": "tslint",
+    "type-check": "tsc --noEmit",
+    "build": "tsc",
+    "prepublishOnly": "npm test && npm run build"
   }
 }
