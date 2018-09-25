@@ -1,5 +1,4 @@
-import { SpawnOptions } from 'child_process'
-import { IsomorphicSpawn, SpawnFactory } from '../../types'
+import { IsomorphicSpawn, SpawnFactory, Options } from '../../types'
 import { TerminationError, InternalError } from '../../classes'
 
 function callSpawn<
@@ -8,7 +7,7 @@ function callSpawn<
   spawn: IsomorphicSpawn<Process>,
   command: string,
   args: string[] = [],
-  options: SpawnOptions = {}
+  options: Options = {}
 ): SpawnFactory<Process> {
   type Info = SpawnFactory.TerminationInformation<Process>
 
@@ -40,7 +39,7 @@ function callSpawn<
     process
   })
 
-  const createPromise = (event: 'close' | 'exit') => new Promise<Info>((resolve, reject) => {
+  const createPromise = (event: Options.TerminationEvent) => new Promise<Info>((resolve, reject) => {
     process.on('error', error => reject(new InternalError({
       command,
       args,
@@ -60,8 +59,19 @@ function callSpawn<
     })
   })
 
-  const onclose = createPromise('close')
-  const onexit = createPromise('exit')
+  const [onclose, onexit] = (() => {
+    const { event } = options
+
+    if (event) {
+      const promise = createPromise(event)
+      return [promise, promise]
+    } else {
+      return [
+        createPromise('close'),
+        createPromise('exit')
+      ]
+    }
+  })()
 
   return {
     onclose,

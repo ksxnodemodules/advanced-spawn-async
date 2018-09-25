@@ -40,6 +40,14 @@ export namespace SpawnFactory {
   }
 }
 
+export interface Options extends SpawnOptions {
+  readonly event?: Options.TerminationEvent
+}
+
+export namespace Options {
+  export type TerminationEvent = 'close' | 'exit'
+}
+
 export interface InternalErrorInformation<Process extends IsomorphicSpawn.Return, Error> {
   readonly command: string
   readonly args: string[]
