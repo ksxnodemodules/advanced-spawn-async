@@ -51,7 +51,7 @@ CLOSE {
 
 ### Custom Spawn Function
 
-Provide custom spawn function
+User provide custom spawn function.
 
 ```javascript
 import { core } from 'advanced-spawn-async'
