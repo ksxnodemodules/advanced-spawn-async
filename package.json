@@ -38,7 +38,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm run type-check && npm run lint && jest",
+    "test": "npm run clean && npm run type-check && npm run lint && jest",
     "lint": "npm run tslint",
     "tslint": "tslint --project .",
     "tslint:fix": "npm run tslint -- --fix",
