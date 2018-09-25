@@ -26,11 +26,11 @@ process.stdin.write('console.error("stderr")\n')
 process.stdin.end('require("process").exit(0)\n')
 
 onclose.then(({ stdout, stderr, output }) => {
-  console.info('CLOSE', { stdout, stderr, output })
+  console.log('CLOSE', { stdout, stderr, output })
 })
 
 onexit.then(({ stdout, stderr, output }) => {
-  console.info('EXIT', { stdout, stderr, output })
+  console.log('EXIT', { stdout, stderr, output })
 })
 ```
 
@@ -60,6 +60,17 @@ import spawn from 'cross-spawn'
 const { process, onclose, onexit } = core(spawn, 'node')
 
 // Similar to above example
+```
+
+### Non-Zero Status Code
+
+When process returns non-zero code.
+
+```javascript
+import spawn from 'advanced-spawn-async'
+const { process, onclose } = spawn('node')
+process.stdin.end('process.exit(123)\n')
+onclose.catch(error => console.log(error.info))
 ```
 
 ## License
