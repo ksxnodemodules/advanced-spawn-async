@@ -83,4 +83,4 @@ onclose.catch(error => console.log(error.info))
 
 ## License
 
-[MIT](https://git.io/vhaEz) © [Hoàng Văn Khải](https://github.com/KSXGitHub)
+[MIT](https://git.io/fAAID) © [Hoàng Văn Khải](https://github.com/KSXGitHub)
