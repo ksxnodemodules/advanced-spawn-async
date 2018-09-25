@@ -1,5 +1,6 @@
-import { spawn, SpawnOptions } from 'child_process'
+import { spawn } from 'child_process'
+import { Options } from '../../types'
 import callSpawn from '../core'
 
-export = (command: string, args?: string[], options?: SpawnOptions) =>
+export = (command: string, args?: string[], options?: Options) =>
   callSpawn(spawn, command, args, options)
