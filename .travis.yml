@@ -26,4 +26,5 @@ install:
   - pnpm install --shamefully-flatten
 
 script:
+  - bash -c 'type node'
   - pnpm test
