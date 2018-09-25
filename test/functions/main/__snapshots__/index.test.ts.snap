@@ -144,6 +144,58 @@ Object {
 }
 `;
 
+exports[`when process successfully terminated with specified stdin close promise 1`] = `
+Object {
+  "args": Array [],
+  "command": "bash",
+  "options": Object {},
+  "output": "stdin foo
+stdin bar
+stderr foo
+stderr bar
+",
+  "process": Object {
+    "constructor": Object {
+      "name": "ChildProcess",
+    },
+  },
+  "signal": null,
+  "status": 0,
+  "stderr": "stderr foo
+stderr bar
+",
+  "stdout": "stdin foo
+stdin bar
+",
+}
+`;
+
+exports[`when process successfully terminated with specified stdin exit promise 1`] = `
+Object {
+  "args": Array [],
+  "command": "bash",
+  "options": Object {},
+  "output": "stdin foo
+stdin bar
+stderr foo
+stderr bar
+",
+  "process": Object {
+    "constructor": Object {
+      "name": "ChildProcess",
+    },
+  },
+  "signal": null,
+  "status": 0,
+  "stderr": "stderr foo
+stderr bar
+",
+  "stdout": "stdin foo
+stdin bar
+",
+}
+`;
+
 exports[`when process successfully terminated with stdout and stderr onclose promise 1`] = `
 Object {
   "args": "[REDACTED]",
