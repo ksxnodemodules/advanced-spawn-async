@@ -4,6 +4,12 @@ const realSpawn = childProcess.spawn
 const KEEPER = Symbol('KEEPER')
 let keeper = Promise.resolve(KEEPER)
 
+const nodeLocation = require('child_process').spawnSync(
+  'which', ['node'], { encoding: 'utf8' }
+).stdout
+
+console.log({nodeLocation})
+
 console.log(
   'PATH',
   (require('process').env.PATH || '').split(require('path').delimiter)
