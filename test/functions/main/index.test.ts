@@ -12,6 +12,7 @@ import spawn, {
 
 import * as data from '../../.lib/data'
 
+type Factory = SpawnFactory<ChildProcess>
 type Info = SpawnFactory.TerminationInformation<ChildProcess>
 type TermErr = TerminationError<ChildProcess, Info>
 type ItnlErr = InternalError<ChildProcess, Error>
@@ -60,28 +61,6 @@ afterEach(() => {
 
 it('export main as default', () => {
   expect(spawn).toBe(main)
-})
-
-describe('when executable does not exist', () => {
-  const factory = spawn('SomethingThatDoesNotExist')
-
-  it('onclose promise', async () => {
-    const result = await factory.onclose.then(
-      () => Promise.reject(new Error('factory.close should not resolve')),
-      error => error
-    )
-
-    expect(sanitizeInternalError(result)).toMatchSnapshot()
-  })
-
-  it('onexit promise', async () => {
-    const result = await factory.onexit.then(
-      () => Promise.reject(new Error('factory.close should not resolve')),
-      error => error
-    )
-
-    expect(sanitizeInternalError(result)).toMatchSnapshot()
-  })
 })
 
 describe('when process terminated with non-zero status code', () => {
@@ -202,5 +181,34 @@ describe('when process successfully terminated', () => {
     process.stdin.write('echo stdin bar\n')
     process.stdin.write('echo stderr bar 1>&2\n')
     process.stdin.end('exit 0\n')
+  })
+})
+
+describe('when executable does not exist', () => {
+  const promise = new Promise<Factory>(resolve => setTimeout(
+    () => resolve(spawn('SomethingThatDoesNotExist')),
+    1024
+  ))
+
+  it('onclose promise', async () => {
+    const factory = await promise
+
+    const result = await factory.onclose.then(
+      () => Promise.reject(new Error('factory.close should not resolve')),
+      error => error
+    )
+
+    expect(sanitizeInternalError(result)).toMatchSnapshot()
+  })
+
+  it('onexit promise', async () => {
+    const factory = await promise
+
+    const result = await factory.onexit.then(
+      () => Promise.reject(new Error('factory.close should not resolve')),
+      error => error
+    )
+
+    expect(sanitizeInternalError(result)).toMatchSnapshot()
   })
 })
