@@ -4,6 +4,11 @@ const realSpawn = childProcess.spawn
 const KEEPER = Symbol('KEEPER')
 let keeper = Promise.resolve(KEEPER)
 
+console.log(
+  'PATH',
+  (require('process').env.PATH || '').split(require('path').delimiter)
+)
+
 const FakeChildProcess = class ChildProcess {}
 
 childProcess.spawn = (...args) => {
