@@ -10,5 +10,8 @@ module.exports = {
     'jsx',
     'json',
     'node'
+  ],
+  setupFiles: [
+    require.resolve('./tools/jest/setup.js')
   ]
 }
