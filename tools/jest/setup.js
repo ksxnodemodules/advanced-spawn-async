@@ -10,7 +10,7 @@ childProcess.spawn = (...args) => {
   const promise = keeper.then(() => realSpawn(...args))
 
   keeper = promise.then(process => new Promise(resolve => {
-    const listener = () => resolve(KEEPER)
+    const listener = () => setTimeout(() => resolve(KEEPER), 100)
     process.on('exit', listener)
     process.on('error', listener)
   }))
