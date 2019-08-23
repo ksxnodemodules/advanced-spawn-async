@@ -23,7 +23,7 @@ before_install:
   - pnpm --version
 
 install:
-  - pnpm install --shamefully-flatten
+  - pnpm install
 
 script:
   - pnpm test
