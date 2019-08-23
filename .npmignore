@@ -26,3 +26,4 @@ renovate*
 tsconfig*
 *.ts
 !*.d.ts
+*.tsbuildinfo
