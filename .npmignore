@@ -13,6 +13,7 @@ temp.*
 *.editorconfig*
 *.eslintrc*
 .git*
+/coverage
 /.travis.yml
 /appveyor.yml
 /circle.yml
