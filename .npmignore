@@ -21,6 +21,7 @@ docs
 yarn.lock
 package-lock.json
 shrinkwrap*
+pnpm-lock*
 renovate*
 tsconfig*
 *.ts
