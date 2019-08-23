@@ -27,3 +27,4 @@ tsconfig*
 *.ts
 !*.d.ts
 *.tsbuildinfo
+/.vscode
