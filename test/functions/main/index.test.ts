@@ -204,3 +204,24 @@ describe('when process successfully terminated', () => {
     process.stdin.end('exit 0\n')
   })
 })
+
+describe('when it does not pipe', () => {
+  const { onclose } = spawn(
+    'node',
+    [data.bothStdoutStderr],
+    {
+      stdio: 'ignore',
+      env: { HELLO: 'WORLD' }
+    }
+  )
+
+  it('stdout is empty', async () => {
+    const { stdout } = await onclose
+    expect(stdout).toBe('')
+  })
+
+  it('stderr is empty', async () => {
+    const { stderr } = await onclose
+    expect(stderr).toBe('')
+  })
+})

@@ -8,8 +8,8 @@ export namespace IsomorphicSpawn {
   export interface Return {
     on (event: 'close' | 'exit', listener: (status: number, signal: string | null) => void): void
     on (event: 'error', listener: (error: Error) => void): void
-    stdout: Readable
-    stderr: Readable
+    readonly stdout?: Readable | null
+    readonly stderr?: Readable | null
   }
 
   export interface Readable {
