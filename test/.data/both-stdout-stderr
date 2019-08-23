@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-const {env} = require('process')
+const { env } = require('process')
 
 const count = {
   stdout: 0,
@@ -27,4 +27,4 @@ print.stderr()
 Array(5).forEach(print.stdout)
 Array(5).forEach(print.stderr)
 
-console.info({env})
+console.info({ env })
