@@ -379,7 +379,7 @@ packages:
       integrity: sha512-xcmtfHIgF9SYjhGdsZR1nQslxG4hu0cIpFfLQ4CWdw3KzHvl7ki1AzFLQUkbDTG42ZN3ZsQfdRzXRlkAvbIy5Q==
   /@types/ramda/0.26.19_typescript@3.5.3:
     dependencies:
-      ts-toolbelt: 3.8.3_typescript@3.5.3
+      ts-toolbelt: 3.8.4_typescript@3.5.3
     dev: true
     peerDependencies:
       typescript: '*'
@@ -3498,14 +3498,14 @@ packages:
       jest: '>=24 <25'
     resolution:
       integrity: sha512-h6ZCZiA1EQgjczxq+uGLXQlNgeg02WWJBbeT8j6nyIBRQdglqbvzDoHahTEIiS6Eor6x8mK6PfZ7brQ9Q6tzHw==
-  /ts-toolbelt/3.8.3_typescript@3.5.3:
+  /ts-toolbelt/3.8.4_typescript@3.5.3:
     dependencies:
       typescript: 3.5.3
     dev: true
     peerDependencies:
       typescript: ^3.5.0
     resolution:
-      integrity: sha512-/MnLA9Pr7ppDIxMf8sGSbNoiQDORQtzdcma8IsepArmikqZbu7CiwP+aAYaZnVXjOxLAleIEyxe20LJx0WgcCw==
+      integrity: sha512-JdM3qMor3jrJqtTDiOktBUsMG8GVwrN3NJA/cXlFWW7pcxwDRk0IATF5Co1hSykCphmVZ/aUWBdmhZvxgwBXhw==
   /tslib/1.10.0:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
