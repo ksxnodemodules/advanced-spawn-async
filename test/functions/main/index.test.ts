@@ -197,11 +197,11 @@ describe('when process successfully terminated', () => {
       expect(sanitize(await onexit, { args: true })).toMatchSnapshot()
     })
 
-    process.stdin.write('echo stdin foo\n')
-    process.stdin.write('echo stderr foo 1>&2\n')
-    process.stdin.write('echo stdin bar\n')
-    process.stdin.write('echo stderr bar 1>&2\n')
-    process.stdin.end('exit 0\n')
+    process.stdin!.write('echo stdin foo\n')
+    process.stdin!.write('echo stderr foo 1>&2\n')
+    process.stdin!.write('echo stdin bar\n')
+    process.stdin!.write('echo stderr bar 1>&2\n')
+    process.stdin!.end('exit 0\n')
   })
 })
 
