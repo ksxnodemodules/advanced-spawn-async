@@ -1,0 +1,381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`resolve/reject when error is emitted onclose rejects with error that has "info" property that matches snapshot 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "error": Symbol(ERROR),
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "process": Any<FakeProcess>,
+}
+`;
+
+exports[`resolve/reject when error is emitted onclose rejects with error that matches snapshot 1`] = `[InternalError: Symbol(ERROR)]`;
+
+exports[`resolve/reject when error is emitted onexit rejects with error that has "info" property that matches snapshot 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "error": Symbol(ERROR),
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "process": Any<FakeProcess>,
+}
+`;
+
+exports[`resolve/reject when error is emitted onexit rejects with error that matches snapshot 1`] = `[InternalError: Symbol(ERROR)]`;
+
+exports[`resolve/reject when exit status is 0 onclose 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "output": "stdout 0
+stderr 0
+stdout 1
+stdout 1
+stderr 1
+stderr 1
+stdout 2
+stdout 2
+stdout 2
+stderr 2
+stderr 2
+stderr 2
+",
+  "process": Any<FakeProcess>,
+  "signal": null,
+  "status": 0,
+  "stderr": "stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+",
+  "stdout": "stdout 0
+stdout 1
+stdout 1
+stdout 2
+stdout 2
+stdout 2
+",
+}
+`;
+
+exports[`resolve/reject when exit status is 0 onexit 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "output": "stdout 0
+stderr 0
+stdout 1
+stdout 1
+stderr 1
+stderr 1
+stdout 2
+stdout 2
+stdout 2
+stderr 2
+stderr 2
+stderr 2
+",
+  "process": Any<FakeProcess>,
+  "signal": null,
+  "status": 0,
+  "stderr": "stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+",
+  "stdout": "stdout 0
+stdout 1
+stdout 1
+stdout 2
+stdout 2
+stdout 2
+",
+}
+`;
+
+exports[`resolve/reject when exit status is not 0 and signal is not null onclose rejects with an error that has "info" property that matches snapshot 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "output": "stdout 0
+stderr 0
+stdout 1
+stdout 1
+stderr 1
+stderr 1
+stdout 2
+stdout 2
+stdout 2
+stderr 2
+stderr 2
+stderr 2
+",
+  "process": Any<FakeProcess>,
+  "signal": "signal",
+  "status": 6,
+  "stderr": "stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+",
+  "stdout": "stdout 0
+stdout 1
+stdout 1
+stdout 2
+stdout 2
+stdout 2
+",
+}
+`;
+
+exports[`resolve/reject when exit status is not 0 and signal is not null onclose rejects with an error that matches snapshot 1`] = `
+[TerminationError: Failed to execute ["command","a","r","g","s"] ({"status":6,"signal":"signal"}) stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+]
+`;
+
+exports[`resolve/reject when exit status is not 0 and signal is not null onexit rejects with an error that has "info" property that matches snapshot 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "output": "stdout 0
+stderr 0
+stdout 1
+stdout 1
+stderr 1
+stderr 1
+stdout 2
+stdout 2
+stdout 2
+stderr 2
+stderr 2
+stderr 2
+",
+  "process": Any<FakeProcess>,
+  "signal": "signal",
+  "status": 6,
+  "stderr": "stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+",
+  "stdout": "stdout 0
+stdout 1
+stdout 1
+stdout 2
+stdout 2
+stdout 2
+",
+}
+`;
+
+exports[`resolve/reject when exit status is not 0 and signal is not null onexit rejects with an error that matches snapshot 1`] = `
+[TerminationError: Failed to execute ["command","a","r","g","s"] ({"status":6,"signal":"signal"}) stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+]
+`;
+
+exports[`resolve/reject when exit status is not 0 onclose rejects with an error that has "info" property that matches snapshot 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "output": "stdout 0
+stderr 0
+stdout 1
+stdout 1
+stderr 1
+stderr 1
+stdout 2
+stdout 2
+stdout 2
+stderr 2
+stderr 2
+stderr 2
+",
+  "process": Any<FakeProcess>,
+  "signal": null,
+  "status": 6,
+  "stderr": "stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+",
+  "stdout": "stdout 0
+stdout 1
+stdout 1
+stdout 2
+stdout 2
+stdout 2
+",
+}
+`;
+
+exports[`resolve/reject when exit status is not 0 onclose rejects with an error that matches snapshot 1`] = `
+[TerminationError: Failed to execute ["command","a","r","g","s"] ({"status":6,"signal":null}) stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+]
+`;
+
+exports[`resolve/reject when exit status is not 0 onexit rejects with an error that has "info" property that matches snapshot 1`] = `
+Object {
+  "args": Array [
+    "a",
+    "r",
+    "g",
+    "s",
+  ],
+  "command": "command",
+  "options": Object {
+    "stdio": "pipe",
+  },
+  "output": "stdout 0
+stderr 0
+stdout 1
+stdout 1
+stderr 1
+stderr 1
+stdout 2
+stdout 2
+stdout 2
+stderr 2
+stderr 2
+stderr 2
+",
+  "process": Any<FakeProcess>,
+  "signal": null,
+  "status": 6,
+  "stderr": "stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+",
+  "stdout": "stdout 0
+stdout 1
+stdout 1
+stdout 2
+stdout 2
+stdout 2
+",
+}
+`;
+
+exports[`resolve/reject when exit status is not 0 onexit rejects with an error that matches snapshot 1`] = `
+[TerminationError: Failed to execute ["command","a","r","g","s"] ({"status":6,"signal":null}) stderr 0
+stderr 1
+stderr 1
+stderr 2
+stderr 2
+stderr 2
+]
+`;
+
+exports[`when stdout/stderr is null onclose 1`] = `
+Object {
+  "args": Array [],
+  "command": "command",
+  "options": Object {
+    "stdio": "ignore",
+  },
+  "output": "",
+  "process": Any<FakeProcess>,
+  "signal": null,
+  "status": 0,
+  "stderr": "",
+  "stdout": "",
+}
+`;
+
+exports[`when stdout/stderr is null onexit 1`] = `
+Object {
+  "args": Array [],
+  "command": "command",
+  "options": Object {
+    "stdio": "ignore",
+  },
+  "output": "",
+  "process": Any<FakeProcess>,
+  "signal": null,
+  "status": 0,
+  "stderr": "",
+  "stdout": "",
+}
+`;
