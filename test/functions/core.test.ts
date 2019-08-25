@@ -1,5 +1,6 @@
 import EventEmitter from 'events'
 import { SpawnOptions } from 'child_process'
+import flipPromise from '../.lib/flip-promise'
 
 import {
   core,
@@ -30,13 +31,6 @@ class FakeProcess extends MockedEventEmitter implements IsomorphicSpawn.Return {
     this.emit('close', status, signal)
     this.emit('exit', status, signal)
   }
-}
-
-function flipPromise (promise: Promise<any>) {
-  return promise.then(
-    value => Promise.reject(new Error(`Expecting promise to rejects, but it resolves ${value}`)),
-    reason => reason
-  )
 }
 
 function createSpawnFunc (process = new FakeProcess()) {
