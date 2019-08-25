@@ -354,7 +354,7 @@ stderr[2]
 ",
   },
   "message": "[REDACTED]",
-  "name": "SpawnError",
+  "name": "TerminationError",
   "stack": "[REDACTED]",
 }
 `;
@@ -395,7 +395,7 @@ stderr[2]
 ",
   },
   "message": "[REDACTED]",
-  "name": "SpawnError",
+  "name": "TerminationError",
   "stack": "[REDACTED]",
 }
 `;

@@ -8,9 +8,9 @@ import spawn, {
   TerminationError,
   InternalError,
   InternalErrorInformation
-} from '../../../index'
+} from '../../index'
 
-import * as data from '../../.lib/data'
+import * as data from '../.lib/data'
 
 type Info = SpawnFactory.TerminationInformation<ChildProcess>
 type TermErr = TerminationError<ChildProcess, Info>
