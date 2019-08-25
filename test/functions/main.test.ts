@@ -4,10 +4,7 @@ import {
 
 import spawn, {
   main,
-  SpawnFactory,
-  TerminationError,
-  InternalError,
-  InternalErrorInformation
+  SpawnFactory
 } from '../../index'
 
 import * as data from '../.lib/data'
