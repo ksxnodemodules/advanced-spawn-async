@@ -41,14 +41,18 @@ function callSpawn<
     process
   })
 
-  const createPromise = (event: Options.TerminationEvent) => new Promise<Info>((resolve, reject) => {
-    process.on('error', error => reject(new InternalError({
+  const onerror = new Promise<InternalError<Process, Error>>(resolve => {
+    process.on('error', error => resolve(new InternalError({
       command,
       args,
       options,
       process,
       error
     })))
+  })
+
+  const createPromise = (event: Options.TerminationEvent) => new Promise<Info>((resolve, reject) => {
+    void onerror.then(error => reject(error))
 
     process.on(event, (status, signal) => {
       const info = mkinfo(status, signal)
