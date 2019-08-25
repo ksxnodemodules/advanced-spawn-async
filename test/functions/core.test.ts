@@ -1,5 +1,4 @@
 import EventEmitter from 'events'
-import { SpawnOptions } from 'child_process'
 import flipPromise from '../.lib/flip-promise'
 
 import {
