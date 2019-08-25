@@ -17,7 +17,7 @@ class TerminationError<
   }
 
   protected getName () {
-    return 'SpawnError'
+    return 'TerminationError'
   }
 
   static DEFAULT_MESSAGE (info: SpawnFactory.TerminationInformation<IsomorphicSpawn.Return>) {
