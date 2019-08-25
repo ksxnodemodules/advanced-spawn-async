@@ -3,38 +3,26 @@
 exports[`when executable does not exist onclose promise 1`] = `
 Object {
   "info": Object {
-    "args": "[REDACTED]",
+    "args": Array [],
     "command": "SomethingThatDoesNotExist",
     "error": [Error: spawn SomethingThatDoesNotExist ENOENT],
     "options": Object {},
-    "process": Object {
-      "constructor": Object {
-        "name": "ChildProcess",
-      },
-    },
+    "process": Anything,
   },
-  "message": "Error: spawn SomethingThatDoesNotExist ENOENT",
   "name": "InternalError",
-  "stack": "[REDACTED]",
 }
 `;
 
 exports[`when executable does not exist onexit promise 1`] = `
 Object {
   "info": Object {
-    "args": "[REDACTED]",
+    "args": Array [],
     "command": "SomethingThatDoesNotExist",
     "error": [Error: spawn SomethingThatDoesNotExist ENOENT],
     "options": Object {},
-    "process": Object {
-      "constructor": Object {
-        "name": "ChildProcess",
-      },
-    },
+    "process": Anything,
   },
-  "message": "Error: spawn SomethingThatDoesNotExist ENOENT",
   "name": "InternalError",
-  "stack": "[REDACTED]",
 }
 `;
 
@@ -52,11 +40,7 @@ Object {
   },
   "output": "hello world
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -79,11 +63,7 @@ Object {
   },
   "output": "hello world
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -99,11 +79,7 @@ Object {
   "options": Object {},
   "output": "
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -119,11 +95,7 @@ Object {
   "options": Object {},
   "output": "
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -134,11 +106,9 @@ Object {
 
 exports[`when process successfully terminated with minimal arguments process 1`] = `
 Object {
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "onclose": Promise {},
+  "onexit": Promise {},
+  "process": Anything,
 }
 `;
 
@@ -154,11 +124,7 @@ Object {
   },
   "output": "hello world
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -179,11 +145,7 @@ Object {
   },
   "output": "hello world
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -202,11 +164,7 @@ stdin bar
 stderr foo
 stderr bar
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "stderr foo
@@ -228,11 +186,7 @@ stdin bar
 stderr foo
 stderr bar
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "stderr foo
@@ -246,7 +200,9 @@ stdin bar
 
 exports[`when process successfully terminated with stdout and stderr onclose promise 1`] = `
 Object {
-  "args": "[REDACTED]",
+  "args": Array [
+    Any<String>,
+  ],
   "command": "node",
   "options": Object {
     "env": Object {
@@ -261,11 +217,7 @@ stderr[1]
 stderr[2]
 { env: { HELLO: 'WORLD' } }
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -282,7 +234,9 @@ stderr[2]
 
 exports[`when process successfully terminated with stdout and stderr onexit promise 1`] = `
 Object {
-  "args": "[REDACTED]",
+  "args": Array [
+    Any<String>,
+  ],
   "command": "node",
   "options": Object {
     "env": Object {
@@ -297,11 +251,7 @@ stderr[1]
 stderr[2]
 { env: { HELLO: 'WORLD' } }
 ",
-  "process": Object {
-    "constructor": Object {
-      "name": "ChildProcess",
-    },
-  },
+  "process": Anything,
   "signal": null,
   "status": 0,
   "stderr": "",
@@ -319,7 +269,9 @@ stderr[2]
 exports[`when process terminated with non-zero status code onclose promise 1`] = `
 Object {
   "info": Object {
-    "args": "[REDACTED]",
+    "args": Array [
+      Any<String>,
+    ],
     "command": "node",
     "options": Object {
       "env": Object {
@@ -334,11 +286,7 @@ stderr[1]
 stderr[2]
 { env: { HELLO: 'WORLD' } }
 ",
-    "process": Object {
-      "constructor": Object {
-        "name": "ChildProcess",
-      },
-    },
+    "process": Anything,
     "signal": null,
     "status": 123,
     "stderr": "",
@@ -351,16 +299,16 @@ stderr[2]
 { env: { HELLO: 'WORLD' } }
 ",
   },
-  "message": "[REDACTED]",
   "name": "TerminationError",
-  "stack": "[REDACTED]",
 }
 `;
 
 exports[`when process terminated with non-zero status code onexit promise 1`] = `
 Object {
   "info": Object {
-    "args": "[REDACTED]",
+    "args": Array [
+      Any<String>,
+    ],
     "command": "node",
     "options": Object {
       "env": Object {
@@ -375,11 +323,7 @@ stderr[1]
 stderr[2]
 { env: { HELLO: 'WORLD' } }
 ",
-    "process": Object {
-      "constructor": Object {
-        "name": "ChildProcess",
-      },
-    },
+    "process": Anything,
     "signal": null,
     "status": 123,
     "stderr": "",
@@ -392,8 +336,6 @@ stderr[2]
 { env: { HELLO: 'WORLD' } }
 ",
   },
-  "message": "[REDACTED]",
   "name": "TerminationError",
-  "stack": "[REDACTED]",
 }
 `;

@@ -12,44 +12,6 @@ import spawn, {
 
 import * as data from '../.lib/data'
 
-type Info = SpawnFactory.TerminationInformation<ChildProcess>
-type TermErr = TerminationError<ChildProcess, Info>
-type ItnlErr = InternalError<ChildProcess, Error>
-type ItnlErrInfo = InternalErrorInformation<ChildProcess, Error>
-
-const redacted = '[REDACTED]'
-
-const sanitize = (
-  info: Info | ItnlErrInfo,
-  {
-    args = false
-  }: {
-    args?: boolean
-  } = {}
-) => ({
-  ...info,
-  process: {
-    constructor: {
-      name: info.process.constructor.name
-    }
-  },
-  args: args ? info.args : redacted as typeof redacted
-})
-
-const sanitizeTerminationError = (error: TermErr) => ({
-  ...error,
-  message: redacted as typeof redacted,
-  stack: redacted as typeof redacted,
-  info: sanitize(error.info)
-})
-
-const sanitizeInternalError = (error: ItnlErr) => ({
-  ...error,
-  stack: redacted as typeof redacted,
-  message: error.message,
-  info: sanitize(error.info)
-})
-
 beforeEach(() => {
   jest.setTimeout(131072)
 })
@@ -71,7 +33,11 @@ describe('when executable does not exist', () => {
       error => error
     )
 
-    expect(sanitizeInternalError(result)).toMatchSnapshot()
+    expect({ ...result }).toMatchSnapshot({
+      info: {
+        process: expect.anything()
+      }
+    })
   })
 
   it('onexit promise', async () => {
@@ -80,7 +46,11 @@ describe('when executable does not exist', () => {
       error => error
     )
 
-    expect(sanitizeInternalError(result)).toMatchSnapshot()
+    expect({ ...result }).toMatchSnapshot({
+      info: {
+        process: expect.anything()
+      }
+    })
   })
 })
 
@@ -93,7 +63,12 @@ describe('when process terminated with non-zero status code', () => {
       error => error
     )
 
-    expect(sanitizeTerminationError(result)).toMatchSnapshot()
+    expect({ ...result }).toMatchSnapshot({
+      info: {
+        args: [expect.any(String)],
+        process: expect.anything()
+      }
+    })
   })
 
   it('onexit promise', async () => {
@@ -102,7 +77,12 @@ describe('when process terminated with non-zero status code', () => {
       error => error
     )
 
-    expect(sanitizeTerminationError(result)).toMatchSnapshot()
+    expect({ ...result }).toMatchSnapshot({
+      info: {
+        args: [expect.any(String)],
+        process: expect.anything()
+      }
+    })
   })
 })
 
@@ -111,14 +91,9 @@ describe('when process successfully terminated', () => {
     const factory = () => spawn('echo')
 
     it('process', () => {
-      expect({
-        ...factory,
-        process: {
-          constructor: {
-            name: factory().process.constructor.name
-          }
-        }
-      }).toMatchSnapshot()
+      expect(factory()).toMatchSnapshot({
+        process: expect.anything()
+      })
     })
 
     describe('close promise', () => {
@@ -129,7 +104,9 @@ describe('when process successfully terminated', () => {
 
       it('matches snapshot', async () => {
         const { onclose } = factory()
-        expect(sanitize(await onclose, { args: true })).toMatchSnapshot()
+        expect(await onclose).toMatchSnapshot({
+          process: expect.anything()
+        })
       })
     })
 
@@ -141,7 +118,9 @@ describe('when process successfully terminated', () => {
 
       it('matches snapshot', async () => {
         const { onexit } = factory()
-        expect(sanitize(await onexit, { args: true })).toMatchSnapshot()
+        expect(await onexit).toMatchSnapshot({
+          process: expect.anything()
+        })
       })
     })
   })
@@ -150,11 +129,15 @@ describe('when process successfully terminated', () => {
     const factory = () => spawn('echo', ['hello', 'world'], { env: { HELLO: 'WORLD' } })
 
     it('onclose promise', async () => {
-      expect(sanitize(await factory().onclose, { args: true })).toMatchSnapshot()
+      expect(await factory().onclose).toMatchSnapshot({
+        process: expect.anything()
+      })
     })
 
     it('onexit promise', async () => {
-      expect(sanitize(await factory().onexit, { args: true })).toMatchSnapshot()
+      expect(await factory().onexit).toMatchSnapshot({
+        process: expect.anything()
+      })
     })
   })
 
@@ -167,11 +150,15 @@ describe('when process successfully terminated', () => {
     })
 
     it('onclose promise', async () => {
-      expect(sanitize(await factory().onclose, { args: true })).toMatchSnapshot()
+      expect(await factory().onclose).toMatchSnapshot({
+        process: expect.anything()
+      })
     })
 
     it('onexit promise', async () => {
-      expect(sanitize(await factory().onexit, { args: true })).toMatchSnapshot()
+      expect(await factory().onexit).toMatchSnapshot({
+        process: expect.anything()
+      })
     })
   })
 
@@ -179,11 +166,17 @@ describe('when process successfully terminated', () => {
     const factory = () => spawn('node', [data.bothStdoutStderr], { env: { HELLO: 'WORLD' } })
 
     it('onclose promise', async () => {
-      expect(sanitize(await factory().onclose)).toMatchSnapshot()
+      expect(await factory().onclose).toMatchSnapshot({
+        args: [expect.any(String)],
+        process: expect.anything()
+      })
     })
 
     it('onexit promise', async () => {
-      expect(sanitize(await factory().onexit)).toMatchSnapshot()
+      expect(await factory().onexit).toMatchSnapshot({
+        args: [expect.any(String)],
+        process: expect.anything()
+      })
     })
   })
 
@@ -206,11 +199,15 @@ describe('when process successfully terminated', () => {
     const tester = (callback: Callback) => () => run(callback)
 
     it('close promise', tester(async factory => {
-      expect(sanitize(await factory.onclose, { args: true })).toMatchSnapshot()
+      expect(await factory.onclose).toMatchSnapshot({
+        process: expect.anything()
+      })
     }))
 
     it('exit promise', tester(async factory => {
-      expect(sanitize(await factory.onexit, { args: true })).toMatchSnapshot()
+      expect(await factory.onexit).toMatchSnapshot({
+        process: expect.anything()
+      })
     }))
   })
 })
