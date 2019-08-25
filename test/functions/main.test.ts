@@ -8,6 +8,7 @@ import spawn, {
 } from '../../index'
 
 import * as data from '../.lib/data'
+import flipPromise from '../.lib/flip-promise'
 
 beforeEach(() => {
   jest.setTimeout(131072)
@@ -25,10 +26,7 @@ describe('when executable does not exist', () => {
   const factory = () => spawn('SomethingThatDoesNotExist')
 
   it('onclose promise', async () => {
-    const result = await factory().onclose.then(
-      () => Promise.reject(new Error('factory.close should not resolve')),
-      error => error
-    )
+    const result = await flipPromise(factory().onclose)
 
     expect({ ...result }).toMatchSnapshot({
       info: {
@@ -38,10 +36,7 @@ describe('when executable does not exist', () => {
   })
 
   it('onexit promise', async () => {
-    const result = await factory().onexit.then(
-      () => Promise.reject(new Error('factory.close should not resolve')),
-      error => error
-    )
+    const result = await flipPromise(factory().onexit)
 
     expect({ ...result }).toMatchSnapshot({
       info: {
@@ -55,10 +50,7 @@ describe('when process terminated with non-zero status code', () => {
   const factory = () => spawn('node', [data.withNonZeroStatus], { env: { HELLO: 'WORLD' } })
 
   it('onclose promise', async () => {
-    const result = await factory().onclose.then(
-      () => Promise.reject(new Error('factory.close should not resolve')),
-      error => error
-    )
+    const result = await flipPromise(factory().onclose)
 
     expect({ ...result }).toMatchSnapshot({
       info: {
@@ -69,10 +61,7 @@ describe('when process terminated with non-zero status code', () => {
   })
 
   it('onexit promise', async () => {
-    const result = await factory().onexit.then(
-      () => Promise.reject(new Error('factory.close should not resolve')),
-      error => error
-    )
+    const result = await flipPromise(factory().onexit)
 
     expect({ ...result }).toMatchSnapshot({
       info: {
