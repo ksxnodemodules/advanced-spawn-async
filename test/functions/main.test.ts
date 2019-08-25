@@ -18,14 +18,14 @@ afterEach(() => {
   jest.setTimeout(5000)
 })
 
-it('export main as default', () => {
+it.skip('export main as default', () => {
   expect(spawn).toBe(main)
 })
 
 describe('when executable does not exist', () => {
   const factory = () => spawn('SomethingThatDoesNotExist')
 
-  it('onclose promise', async () => {
+  it.skip('onclose promise', async () => {
     const result = await flipPromise(factory().onclose)
 
     expect({ ...result }).toMatchSnapshot({
@@ -35,7 +35,7 @@ describe('when executable does not exist', () => {
     })
   })
 
-  it('onexit promise', async () => {
+  it.skip('onexit promise', async () => {
     const result = await flipPromise(factory().onexit)
 
     expect({ ...result }).toMatchSnapshot({
@@ -49,7 +49,7 @@ describe('when executable does not exist', () => {
 describe('when process terminated with non-zero status code', () => {
   const factory = () => spawn('node', [data.withNonZeroStatus], { env: { HELLO: 'WORLD' } })
 
-  it('onclose promise', async () => {
+  it.skip('onclose promise', async () => {
     const result = await flipPromise(factory().onclose)
 
     expect({ ...result }).toMatchSnapshot({
@@ -60,7 +60,7 @@ describe('when process terminated with non-zero status code', () => {
     })
   })
 
-  it('onexit promise', async () => {
+  it.skip('onexit promise', async () => {
     const result = await flipPromise(factory().onexit)
 
     expect({ ...result }).toMatchSnapshot({
@@ -76,19 +76,19 @@ describe('when process successfully terminated', () => {
   describe('with minimal arguments', () => {
     const factory = () => spawn('echo')
 
-    it('process', () => {
+    it.skip('process', () => {
       expect(factory()).toMatchSnapshot({
         process: expect.anything()
       })
     })
 
     describe('close promise', () => {
-      it('onclose->process is factory.process', async () => {
+      it.skip('onclose->process is factory.process', async () => {
         const { onclose, process } = factory()
         expect((await onclose).process).toBe(process)
       })
 
-      it('matches snapshot', async () => {
+      it.skip('matches snapshot', async () => {
         const { onclose } = factory()
         expect(await onclose).toMatchSnapshot({
           process: expect.anything()
@@ -97,12 +97,12 @@ describe('when process successfully terminated', () => {
     })
 
     describe('exit promise', () => {
-      it('exit->process is factory.process', async () => {
+      it.skip('exit->process is factory.process', async () => {
         const { onexit, process } = factory()
         expect((await onexit).process).toBe(process)
       })
 
-      it('matches snapshot', async () => {
+      it.skip('matches snapshot', async () => {
         const { onexit } = factory()
         expect(await onexit).toMatchSnapshot({
           process: expect.anything()
@@ -114,13 +114,13 @@ describe('when process successfully terminated', () => {
   describe('with full arguments', () => {
     const factory = () => spawn('echo', ['hello', 'world'], { env: { HELLO: 'WORLD' } })
 
-    it('onclose promise', async () => {
+    it.skip('onclose promise', async () => {
       expect(await factory().onclose).toMatchSnapshot({
         process: expect.anything()
       })
     })
 
-    it('onexit promise', async () => {
+    it.skip('onexit promise', async () => {
       expect(await factory().onexit).toMatchSnapshot({
         process: expect.anything()
       })
@@ -130,18 +130,18 @@ describe('when process successfully terminated', () => {
   describe('with same event', () => {
     const factory = () => spawn('echo', ['hello', 'world'], { event: 'close' })
 
-    it('onclose is onexit', () => {
+    it.skip('onclose is onexit', () => {
       const { onclose, onexit } = factory()
       void expect(onclose).toBe(onexit)
     })
 
-    it('onclose promise', async () => {
+    it.skip('onclose promise', async () => {
       expect(await factory().onclose).toMatchSnapshot({
         process: expect.anything()
       })
     })
 
-    it('onexit promise', async () => {
+    it.skip('onexit promise', async () => {
       expect(await factory().onexit).toMatchSnapshot({
         process: expect.anything()
       })
@@ -151,14 +151,14 @@ describe('when process successfully terminated', () => {
   describe('with stdout and stderr', () => {
     const factory = () => spawn('node', [data.bothStdoutStderr], { env: { HELLO: 'WORLD' } })
 
-    it('onclose promise', async () => {
+    it.skip('onclose promise', async () => {
       expect(await factory().onclose).toMatchSnapshot({
         args: [expect.any(String)],
         process: expect.anything()
       })
     })
 
-    it('onexit promise', async () => {
+    it.skip('onexit promise', async () => {
       expect(await factory().onexit).toMatchSnapshot({
         args: [expect.any(String)],
         process: expect.anything()
@@ -184,13 +184,13 @@ describe('when process successfully terminated', () => {
 
     const tester = (callback: Callback) => () => run(callback)
 
-    it('close promise', tester(async factory => {
+    it.skip('close promise', tester(async factory => {
       expect(await factory.onclose).toMatchSnapshot({
         process: expect.anything()
       })
     }))
 
-    it('exit promise', tester(async factory => {
+    it.skip('exit promise', tester(async factory => {
       expect(await factory.onexit).toMatchSnapshot({
         process: expect.anything()
       })
@@ -208,12 +208,12 @@ describe('when it does not pipe', () => {
     }
   )
 
-  it('stdout is empty', async () => {
+  it.skip('stdout is empty', async () => {
     const { stdout } = await factory().onclose
     expect(stdout).toBe('')
   })
 
-  it('stderr is empty', async () => {
+  it.skip('stderr is empty', async () => {
     const { stderr } = await factory().onclose
     expect(stderr).toBe('')
   })
