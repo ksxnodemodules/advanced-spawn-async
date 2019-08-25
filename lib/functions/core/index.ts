@@ -75,9 +75,20 @@ function callSpawn<
     }
   })()
 
+  function silentPromiseRejection () {
+    void onclose.catch(() => null)
+    void onexit.catch(() => null)
+  }
+
   return {
-    onclose,
-    onexit,
+    get onclose () {
+      silentPromiseRejection()
+      return onclose
+    },
+    get onexit () {
+      silentPromiseRejection()
+      return onexit
+    },
     process
   }
 }
