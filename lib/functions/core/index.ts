@@ -17,14 +17,12 @@ function callSpawn<
   let stderr = ''
   let output = ''
 
-  // NOTE: Use optional chaining when it is implemented in TypeScript
-  process.stdout && process.stdout.on('data', chunk => {
+  process.stdout?.on('data', chunk => {
     stdout += chunk
     output += chunk
   })
 
-  // NOTE: Use optional chaining when it is implemented in TypeScript
-  process.stderr && process.stderr.on('data', chunk => {
+  process.stderr?.on('data', chunk => {
     stderr += chunk
     output += chunk
   })
