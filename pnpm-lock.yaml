@@ -4,7 +4,7 @@ dependencies:
 devDependencies:
   '@types/jest': 24.0.18
   clean-typescript-build: 0.1.4
-  cross-env: 6.0.0
+  cross-env: 7.0.0
   jest: 24.9.0
   static-type-assert: 3.0.1_typescript@3.7.2
   ts-jest: 24.1.0_jest@24.9.0
@@ -830,15 +830,17 @@ packages:
     dev: true
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-  /cross-env/6.0.0:
+  /cross-env/7.0.0:
     dependencies:
       cross-spawn: 7.0.1
     dev: true
     engines:
-      node: '>=8.0'
+      node: '>=10.14'
+      npm: '>=6'
+      yarn: '>=1'
     hasBin: true
     resolution:
-      integrity: sha512-G/B6gtkjgthT8AP/xN1wdj5Xe18fVyk58JepK8GxpUbqcz3hyWxegocMbvnZK+KoTslwd0ACZ3woi/DVUdVjyQ==
+      integrity: sha512-rV6M9ldNgmwP7bx5u6rZsTbYidzwvrwIYZnT08hSGLcQCcggofgFW+sNe7IhA1SRauPS0QuLbbX+wdNtpqE5CQ==
   /cross-spawn/6.0.5:
     dependencies:
       nice-try: 1.0.5
@@ -853,9 +855,9 @@ packages:
       integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
   /cross-spawn/7.0.1:
     dependencies:
-      path-key: 3.1.0
+      path-key: 3.1.1
       shebang-command: 2.0.0
-      which: 2.0.1
+      which: 2.0.2
     dev: true
     engines:
       node: '>= 8'
@@ -1941,6 +1943,9 @@ packages:
       node: '>=6'
     peerDependencies:
       jest-resolve: '*'
+    peerDependenciesMeta:
+      jest-resolve:
+        optional: true
     resolution:
       integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
   /jest-regex-util/24.9.0:
@@ -2673,12 +2678,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
-  /path-key/3.1.0:
+  /path-key/3.1.1:
     dev: true
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-8cChqz0RP6SHJkMt48FW0A7+qUOn+OsnOsVtzI59tZ8m+5bCSk7hzwET0pulwOM2YMn9J1efb07KB9l9f30SGg==
+      integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
   /path-parse/1.0.6:
     dev: true
     resolution:
@@ -3641,7 +3646,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
-  /which/2.0.1:
+  /which/2.0.2:
     dependencies:
       isexe: 2.0.0
     dev: true
@@ -3649,7 +3654,7 @@ packages:
       node: '>= 8'
     hasBin: true
     resolution:
-      integrity: sha512-N7GBZOTswtB9lkQBZA4+zAXrjEIWAUOB93AvzUiudRzRxhUdLURQ7D/gAIMY1gatT/LTbmbcv8SiYazy3eYB7w==
+      integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   /wordwrap/0.0.3:
     dev: true
     engines:
@@ -3751,7 +3756,7 @@ specifiers:
   '@types/jest': ^24.0.18
   '@types/node': ^12.7.2
   clean-typescript-build: ^0.1.0
-  cross-env: ^6.0.0
+  cross-env: ^7.0.0
   jest: ^24.9.0
   static-type-assert: ^3.0.1
   ts-jest: ^24.0.2
