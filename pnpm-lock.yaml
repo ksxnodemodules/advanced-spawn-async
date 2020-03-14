@@ -8,8 +8,8 @@ devDependencies:
   jest: 24.9.0
   static-type-assert: 3.0.1_typescript@3.7.2
   ts-jest: 24.1.0_jest@24.9.0
-  tslint: 5.20.0_typescript@3.7.2
-  tslint-config-standard: 9.0.0_tslint@5.20.0+typescript@3.7.2
+  tslint: 6.1.0_typescript@3.7.2
+  tslint-config-standard: 9.0.0_tslint@6.1.0+typescript@3.7.2
   typescript: 3.7.2
 lockfileVersion: 5.1
 packages:
@@ -19,6 +19,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-27d4lZoomVyo51VegxI20xZPuSHusqbQag/ztrBC7wegWoQ1nLREPVSKSW8byhTlzTKyNE4ifaTA6lCp7JjpFw==
+  /@babel/code-frame/7.8.3:
+    dependencies:
+      '@babel/highlight': 7.8.3
+    dev: true
+    resolution:
+      integrity: sha512-a9gxpmdXtZEInkCSHUJDLHZVBgb1QS0jhss4cPP93EW7s+uC5bikET2twEF3KV+7rDblJcmNvTR7VJejqd2C2g==
   /@babel/core/7.6.2:
     dependencies:
       '@babel/code-frame': 7.5.5
@@ -89,6 +95,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7dV4eu9gBxoM0dAnj/BCFDW9LFU0zvTrkq0ugM7pnHEgguOEeOz1so2ZghEdzviYzQEED0r4EAgpsBChKy1TRQ==
+  /@babel/highlight/7.8.3:
+    dependencies:
+      chalk: 2.4.2
+      esutils: 2.0.3
+      js-tokens: 4.0.0
+    dev: true
+    resolution:
+      integrity: sha512-PX4y5xQUvy0fnEVHrYOarRPXVWafSjTW9T0Hab8gVIawpl2Sj0ORyrygANq+KjcNlSSTw0YCLSNA8OyZ1I4yEg==
   /@babel/parser/7.7.0:
     dev: true
     engines:
@@ -966,12 +980,12 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-Dj6Wk3tWyTE+Fo1rW8v0Xhwk80um6yFYKbuAxc9c3EZxIHFDYwbi34Uk42u1CdnIiVorvt4RmlSDjIPyzGC2ew==
-  /diff/4.0.1:
+  /diff/4.0.2:
     dev: true
     engines:
       node: '>=0.3.1'
     resolution:
-      integrity: sha512-s2+XdvhPCOF01LRQBC8hf4vhbVmI2CGS5aZnxLJlT5FtdhPCDFq80q++zK2KlrVorVDdL5BOGZ/VfLrVtYNF+Q==
+      integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
   /doctrine/0.7.2:
     dependencies:
       esutils: 1.1.6
@@ -1328,6 +1342,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-J9dlskqUXK1OeTOYBEn5s8aMukWMwWfs+rPTn/jn50Ux4MNXVhubL1wu/j2t+H4NVI+cXEcCaYellqaPVGXNqQ==
+  /glob/7.1.6:
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 3.0.4
+      once: 1.4.0
+      path-is-absolute: 1.0.1
+    dev: true
+    resolution:
+      integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   /globals/11.12.0:
     dev: true
     engines:
@@ -1941,6 +1966,9 @@ packages:
       node: '>=6'
     peerDependencies:
       jest-resolve: '*'
+    peerDependenciesMeta:
+      jest-resolve:
+        optional: true
     resolution:
       integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
   /jest-regex-util/24.9.0:
@@ -2935,6 +2963,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-B/dOmuoAik5bKcD6s6nXDCjzUKnaDvdkRyAk6rsmsKLipWj4797iothd7jmmUhWTfinVMU+wc56rYKsit2Qy4w==
+  /resolve/1.15.1:
+    dependencies:
+      path-parse: 1.0.6
+    dev: true
+    resolution:
+      integrity: sha512-84oo6ZTtoTUpjgNEr5SJyzQhzL72gaRodsSfyxC/AXRvwu0Yse9H8eF9IpGo7b8YetZhlI6v7ZQ6bKBFV/6S7w==
   /ret/0.1.15:
     dev: true
     engines:
@@ -3401,24 +3435,28 @@ packages:
   /tslib/1.10.0:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.1:
+    dev: true
+    resolution:
+      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /tslib/1.9.0:
     dev: true
     resolution:
       integrity: sha512-f/qGG2tUkrISBlQZEjEqoZ3B2+npJjIf04H1wuAv9iA8i04Icp+61KRXxFdha22670NJopsZCIjhC3SnjPRKrQ==
-  /tslint-config-standard/9.0.0_tslint@5.20.0+typescript@3.7.2:
+  /tslint-config-standard/9.0.0_tslint@6.1.0+typescript@3.7.2:
     dependencies:
-      tslint-eslint-rules: 5.4.0_tslint@5.20.0+typescript@3.7.2
+      tslint-eslint-rules: 5.4.0_tslint@6.1.0+typescript@3.7.2
     dev: true
     peerDependencies:
       tslint: '*'
       typescript: '*'
     resolution:
       integrity: sha512-CAw9J743RnPMemQV/XQ4YyNreC+A1NItACfkm+cBedrOkz6CQfwlnbKn8anUXBfoa4Zo4tjAhblRbsMNcSLfSw==
-  /tslint-eslint-rules/5.4.0_tslint@5.20.0+typescript@3.7.2:
+  /tslint-eslint-rules/5.4.0_tslint@6.1.0+typescript@3.7.2:
     dependencies:
       doctrine: 0.7.2
       tslib: 1.9.0
-      tslint: 5.20.0_typescript@3.7.2
+      tslint: 6.1.0_typescript@3.7.2
       tsutils: 3.17.1_typescript@3.7.2
       typescript: 3.7.2
     dev: true
@@ -3427,20 +3465,20 @@ packages:
       typescript: ^2.2.0 || ^3.0.0
     resolution:
       integrity: sha512-WlSXE+J2vY/VPgIcqQuijMQiel+UtmXS+4nvK4ZzlDiqBfXse8FAvkNnTcYhnQyOTW5KFM+uRRGXxYhFpuBc6w==
-  /tslint/5.20.0_typescript@3.7.2:
+  /tslint/6.1.0_typescript@3.7.2:
     dependencies:
-      '@babel/code-frame': 7.5.5
+      '@babel/code-frame': 7.8.3
       builtin-modules: 1.1.1
       chalk: 2.4.2
       commander: 2.20.3
-      diff: 4.0.1
-      glob: 7.1.5
+      diff: 4.0.2
+      glob: 7.1.6
       js-yaml: 3.13.1
       minimatch: 3.0.4
       mkdirp: 0.5.1
-      resolve: 1.12.0
+      resolve: 1.15.1
       semver: 5.7.1
-      tslib: 1.10.0
+      tslib: 1.11.1
       tsutils: 2.29.0_typescript@3.7.2
       typescript: 3.7.2
     dev: true
@@ -3450,10 +3488,10 @@ packages:
     peerDependencies:
       typescript: '>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev'
     resolution:
-      integrity: sha512-2vqIvkMHbnx8acMogAERQ/IuINOq6DFqgF8/VDvhEkBqQh/x6SP0Y+OHnKth9/ZcHQSroOZwUQSN18v8KKF0/g==
+      integrity: sha512-fXjYd/61vU6da04E505OZQGb2VCN2Mq3doeWcOIryuG+eqdmFUXTYVwdhnbEu2k46LNLgUYt9bI5icQze/j0bQ==
   /tsutils/2.29.0_typescript@3.7.2:
     dependencies:
-      tslib: 1.10.0
+      tslib: 1.11.1
       typescript: 3.7.2
     dev: true
     peerDependencies:
@@ -3756,6 +3794,6 @@ specifiers:
   static-type-assert: ^3.0.1
   ts-jest: ^24.0.2
   tslib: ^1.10.0
-  tslint: ^5.19.0
+  tslint: ^6.0.0
   tslint-config-standard: ^9.0.0
   typescript: ^3.7.2
