@@ -6,7 +6,7 @@ devDependencies:
   clean-typescript-build: 0.1.4
   cross-env: 6.0.0
   jest: 24.9.0
-  static-type-assert: 3.0.1_typescript@3.7.2
+  static-type-assert: 4.0.0_typescript@3.7.2
   ts-jest: 24.1.0_jest@24.9.0
   tslint: 5.20.0_typescript@3.7.2
   tslint-config-standard: 9.0.0_tslint@5.20.0+typescript@3.7.2
@@ -1941,6 +1941,9 @@ packages:
       node: '>=6'
     peerDependencies:
       jest-resolve: '*'
+    peerDependenciesMeta:
+      jest-resolve:
+        optional: true
     resolution:
       integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
   /jest-regex-util/24.9.0:
@@ -3196,7 +3199,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-YICcOcv/VTNyJv1eC1IPNB8ftcY=
-  /static-type-assert/3.0.1_typescript@3.7.2:
+  /static-type-assert/4.0.0_typescript@3.7.2:
     dependencies:
       typescript: 3.7.2
       typescript-compare: 0.0.2
@@ -3204,7 +3207,7 @@ packages:
     peerDependencies:
       typescript: ^3.0.3
     resolution:
-      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
   /stealthy-require/1.1.1:
     dev: true
     engines:
@@ -3753,7 +3756,7 @@ specifiers:
   clean-typescript-build: ^0.1.0
   cross-env: ^6.0.0
   jest: ^24.9.0
-  static-type-assert: ^3.0.1
+  static-type-assert: ^4.0.0
   ts-jest: ^24.0.2
   tslib: ^1.10.0
   tslint: ^5.19.0
