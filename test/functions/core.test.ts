@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 import flipPromise from '../.lib/flip-promise'
 
 import {
