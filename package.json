@@ -1,6 +1,6 @@
 {
   "name": "advanced-spawn-async",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Advanced isomorphic asynchronous spawn function",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
