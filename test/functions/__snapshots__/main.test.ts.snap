@@ -203,7 +203,7 @@ Object {
   "args": Array [
     Any<String>,
   ],
-  "command": "node",
+  "command": StringContaining "node",
   "options": Object {
     "env": Object {
       "HELLO": "WORLD",
@@ -237,7 +237,7 @@ Object {
   "args": Array [
     Any<String>,
   ],
-  "command": "node",
+  "command": StringContaining "node",
   "options": Object {
     "env": Object {
       "HELLO": "WORLD",
@@ -272,7 +272,7 @@ Object {
     "args": Array [
       Any<String>,
     ],
-    "command": "node",
+    "command": StringContaining "node",
     "options": Object {
       "env": Object {
         "HELLO": "WORLD",
@@ -309,7 +309,7 @@ Object {
     "args": Array [
       Any<String>,
     ],
-    "command": "node",
+    "command": StringContaining "node",
     "options": Object {
       "env": Object {
         "HELLO": "WORLD",
