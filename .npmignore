@@ -30,3 +30,5 @@ tsconfig*
 !*.d.ts
 *.tsbuildinfo
 /.vscode
+/.dependabot
+/.github
